@@ -3,7 +3,7 @@ kind: PersistentVolumeClaim
 metadata:
   name: wordpress-pvc
 spec:
-  storageClassName: faster
+  storageClassName: storage
   accessModes:
     - ReadWriteOnce
   resources:
