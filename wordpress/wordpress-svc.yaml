@@ -1,11 +1,13 @@
+
 apiVersion: v1
-kind: PersistentVolumeClaim
+kind: Service
 metadata:
-  name: wordpress-pvc
+  name: wordpress-service
 spec:
-  storageClassName: faster
-  accessModes:
-    - ReadWriteOnce
-  resources:
-    requests:
-      storage: 30Gi
+  selector:
+    app: wordpress
+  ports:
+  - protocol: TCP
+    port: 80
+    targetPort: 80
+  type: LoadBalancer
